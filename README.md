@@ -49,7 +49,7 @@ This means a higher chance of cache hits, and hence improved caching effectivene
 This specification introduces the `nft` URI scheme.
 The `nft:` URI prefix signals that the URI at hand must be resolved according to the NFT Gateway Protocol.
 
-The protocol considers NFTs on EVM blockchains, on which an NFT is uniquely identified by the following attributes:
+The protocol considers NFTs on EVM blockchains, on which each token is uniquely identified by the following attributes:
 
 <dl>
   <dt><code>&lt;CHAIN_ID&gt;</code> (hexadecimal)</dt>
@@ -58,12 +58,13 @@ The protocol considers NFTs on EVM blockchains, on which an NFT is uniquely iden
   <dd>The Ethereum address of the NFT smart contract</dd>
   <dt><code>&lt;TOKEN_ID&gt;</code> (hexadecimal)</dt>
   <dd>The <a href="https://eips.ethereum.org/EIPS/eip-721">EIP-721 token ID</a></dd>
-  <dt><code>&lt;BLOCK&gt;</code> (hexadecimal)</dt>
-  <dd>The block number (height)</dd>
+  <dt><code>&lt;BLOCK&gt;</code> (hexadecimal or `latest`)</dt>
+  <dd>The block number (height) or tag</dd>
 </dl>
 
-The block number is an optional attribute that is required to uniquely identify a snapshot state in case of NFTs with mutable data URIs.
-If omitted it defaults to the latest block.
+The block number is an optional attribute identifying a snapshot state in case of NFTs with mutable data URIs.
+A value of `latest` addresses the most recently mined block.
+If omitted, the gateway can choose to query from any block on which the data URI function returns a non-empty string. 
 
 These attributes are combined into a URI according to the following scheme:
 
