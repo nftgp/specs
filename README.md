@@ -38,11 +38,6 @@ This facilitates on-chain generation and storage of complex images with small si
 
 The NFT Gateway Protocol defines a mechanism for the resolution and embedding of resources referenced in SVG to make a self-contained SVG that displays consistently in all environments.
 
-### Caching
-
-By using a standardized, decentralized caching layer, different gateways will be able to share a cache.
-This means a higher chance of cache hits, and hence improved caching effectiveness.
-
 
 ## NFT Address Schema
 
@@ -108,17 +103,6 @@ URIs of any other scheme are not resolved but kept unmodified.
 Resolving a URI means fetching the identified resource via the appropriate protocol (http, ipfs, or nftgp) and embedding the resolved data as [data URI](https://en.wikipedia.org/wiki/Data_URI_scheme) in the SVG replacing the resolved original URI.
 
 In case of unsuccessful fetch requests the original URI shall be left untouched.
-
-## IPFS Caching
-
-WIP
-
-Rough idea is to use IPFS as a decentral cache storage.
-Open question is how to retrieve the IPFS CID (content hash of the resolved SVG file).
-Could be provided by some sort of decentralized key value store (mapping nft:// URIs to IPFS CIDs).
-What options do exist for decentralized key value stores?
-
-Probably a good idea to scope this part out of the inital version.
 
 ## Gateway implementations
 
