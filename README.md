@@ -111,6 +111,7 @@ WIP
 
 Rough idea is to use IPFS as a decentral cache storage.
 Open question is how to retrieve the IPFS CID (content hash of the resolved SVG file).
-Could be provided in the NFT contract metadata (but that's a bit cumbersome to implement), or could be provided by some sort of decentralized key value store (mapping nft:// URIs to IPFS CIDs)
-
+Could be provided by some sort of decentralized key value store (mapping nft:// URIs to IPFS CIDs).
 What options do exist for decentralized key value stores?
+
+Probably a good idea to scope this part out of the inital version.
