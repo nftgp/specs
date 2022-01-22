@@ -10,7 +10,7 @@ The [ERC-721](https://eips.ethereum.org/EIPS/eip-721) open standard prescribes t
 ### Addressability
 
 While sharing the token URI is certainly possible, this URI allows no inference of the actual NFT and the ownership claim it expresses.
-Moreover, for NFT data that is stored or generated on-chain there is no way for websites to link to it in a compact and reliable way as [data URIs](https://en.wikipedia.org/wiki/Data_URI_scheme) are long and not supported by many apps.
+Moreover, for NFT data that is stored or generated on-chain there is no way for websites to link to it in a compact and reliable way since [data URIs](https://en.wikipedia.org/wiki/Data_URI_scheme) are long and not supported by many apps.
 
 The NFT Gateway Protocol defines an address schema enabling direct links to NFT data that are concise, work reliably, and allow inferring ownership.
 
@@ -52,14 +52,14 @@ The `nft:` URI prefix signals that the URI at hand must be resolved according to
 The protocol considers NFTs on EVM blockchains, on which each token is uniquely identified by the following attributes:
 
 <dl>
-  <dt><code>&lt;CHAIN_ID&gt;</code> (hexadecimal)</dt>
+  <dt><code>&lt;CHAIN_ID&gt;</code> (decimal)</dt>
   <dd>The <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-155.md">chain ID</a> of EVM chain storing the NFT contract</dd>
   <dt><code>&lt;CONTRACT_ADDRESS&gt;</code> (hexadecimal)</dt>
   <dd>The Ethereum address of the NFT smart contract</dd>
-  <dt><code>&lt;TOKEN_ID&gt;</code> (hexadecimal)</dt>
+  <dt><code>&lt;TOKEN_ID&gt;</code> (adecimal)</dt>
   <dd>The <a href="https://eips.ethereum.org/EIPS/eip-721">EIP-721 token ID</a></dd>
-  <dt><code>&lt;BLOCK&gt;</code> (hexadecimal or `latest`)</dt>
-  <dd>The block number (height) or tag</dd>
+  <dt><code>&lt;BLOCK&gt;</code> (decimal or <code>latest</code>)</dt>
+  <dd>The block number (height) or <code>latest</code> tag</dd>
 </dl>
 
 The block number is an optional attribute identifying a snapshot state in case of NFTs with mutable data URIs.
@@ -75,8 +75,11 @@ Sections in square brackets are optional and can be omitted.
 The optional `<FILENAME>` suffix does not serve any addressing purposes.
 It shall usually be composed of the [URI component encoded](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent) [EIP-721 name metadata](https://eips.ethereum.org/EIPS/eip-721) and the canonical file extension.
 
-Note: The protocol specifies only an absolute addressing scheme.
-It could potentially be extended in future versions to include relative addresses.
+#### Example
+
+The infamous Beeple NFT's is identified by the following nft scheme URI:
+
+> nft://1/0x2a46f2ffd99e19a89476e2f62270e0a35bbf0756/40913/EVERYDAYS%3A%20THE%20FIRST%205000%20DAYS.jpg
 
 ## SVG URI resolution
 
