@@ -2,7 +2,7 @@
 
 The NFT Gateway Protocol (NFTGP) is a mini protocol designed for privacy preserving access to NFT data stored on- and off-chain.
 
-## Motivation
+## Goals
 
 Non-fungible token (NFT) contracts are popularly used to represent ownership of digital media files on blockchains.
 The [ERC-721](https://eips.ethereum.org/EIPS/eip-721) open standard prescribes that the token stores the URI of the media file (`tokenURI`) as part of its metadata.
@@ -14,7 +14,7 @@ Moreover, for NFT data that is stored or generated on-chain there is no way for 
 
 The NFT Gateway Protocol defines an address schema enabling direct links to NFT data that are concise, work reliably, and allow inferring ownership.
 
-### Privacy
+### Privacy Protection
 
 There are [serious privacy concerns](https://medium.com/@alxlpsc/critical-privacy-vulnerability-getting-exposed-by-metamask-693c63c2ce94) with fetching the token URI directly from the browser.
 This can be alleviated by routing these requests through a proxy gateway.
@@ -23,14 +23,14 @@ This can be alleviated by routing these requests through a proxy gateway.
 
 Gateways implementing the NFT Gateway Protocol will be interoperable and can be used interchangeably by different wallets or other apps for displaying NFT media.
 
-### Decentralization
+### Trust Minimization
 
 Specifying a protocol rather than only implementing a gateway, the NFTGP project aims at fostering a diverse ecosystem of gateways.
 This is crucial for enabling trust minimized access to NFT data where NFT URIs must not be tied to any one central authority.
 
 While the project includes a reference implementation and maintains a free gateway service, its principal goal is promoting adoption by wallets and apps as well as encouraging alternative gateway implementations and deployments.
 
-### Composition
+### Composability
 
 [SVG](https://www.w3.org/TR/SVG/) lends itself as a format for generating images on a blockchain due to its compact vector-based representation.
 Importantly, it can use external resources, like fonts, other SVG files, or raster images, via URI references.
