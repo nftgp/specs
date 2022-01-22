@@ -115,3 +115,20 @@ Could be provided by some sort of decentralized key value store (mapping nft:// 
 What options do exist for decentralized key value stores?
 
 Probably a good idea to scope this part out of the inital version.
+
+## Gateway implementations
+
+### Public gateways
+
+The NFTGP project maintains a public gateway at https://nftgp.todo.
+The hope is that with adoption of the standard there will be alternative public gateways provided by third-parties.
+
+### Private gateways
+
+A gateway can also be maintained privately by app providers.
+
+### Local gateways
+
+An NFT gateway implemented to run locally on the end-users machine must make sure that privacy is preserved.
+This can be achieved by routing all http requests through a generic proxy.
+
