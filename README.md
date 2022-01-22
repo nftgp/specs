@@ -79,7 +79,7 @@ It could potentially be extended in future versions to include relative addresse
 
 ## SVG URI resolution
 
-Value of any SVG [href attribute](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/href) are subject to resolution by the gateway.
+Values of any SVG [href attribute](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/href) are subject to resolution by the gateway.
 
 Additionally, the gateway must resolve the arguments of [css url() functions](https://developer.mozilla.org/en-US/docs/Web/CSS/url).
 
