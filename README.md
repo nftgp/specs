@@ -10,8 +10,7 @@ The [ERC-721](https://eips.ethereum.org/EIPS/eip-721) open standard prescribes t
 ### Addressability
 
 While sharing the token URI is certainly possible, this URI allows no inference of the actual NFT and the ownership claim it expresses.
-Moreover, for NFT data that is stored or generated on-chain there is no way for websites to link to it in a compact and reliable way.
-[Data URIs](https://en.wikipedia.org/wiki/Data_URI_scheme) are long and not supported by many apps.
+Moreover, for NFT data that is stored or generated on-chain there is no way for websites to link to it in a compact and reliable way as [data URIs](https://en.wikipedia.org/wiki/Data_URI_scheme) are long and not supported by many apps.
 
 The NFT Gateway Protocol defines an address schema enabling direct links to NFT data that are concise, work reliably, and allow inferring ownership.
 
@@ -22,12 +21,7 @@ This can be alleviated by routing these requests through a proxy gateway.
 
 ### Interoperability
 
-Gateways implementing the NFT Gateway Protocol will be interoperable and can be used interchangeably from different wallets or other apps for displaying NFT media.
-
-### Caching
-
-If a gateway is used by many different apps it will have a higher chance of cache hits.
-Moreover, different gateways, if they adhere to the same protocol, can share a decentralized cache for even higher caching effectiveness.
+Gateways implementing the NFT Gateway Protocol will be interoperable and can be used interchangeably by different wallets or other apps for displaying NFT media.
 
 ### Decentralization
 
@@ -43,6 +37,12 @@ Importantly, it can use external resources, like fonts, other SVG files, or rast
 This facilitates on-chain generation and storage of complex images with small size, that are composed of larger image layers stored off-chain, e.g., on [IPFS](https://ipfs.io).
 
 The NFT Gateway Protocol defines a mechanism for the resolution and embedding of resources referenced in SVG to make a self-contained SVG that displays consistently in all environments.
+
+### Caching
+
+By using a standardized, decentralized caching layer, different gateways will be able to share a cache.
+This means a higher chance of cache hits, and hence improved caching effectiveness.
+
 
 ## NFT Address Schema
 
@@ -107,4 +107,10 @@ In case of unsuccessful fetch requests the original URI shall be left untouched.
 
 ## IPFS Caching
 
-Coming soon...
+WIP
+
+Rough idea is to use IPFS as a decentral cache storage.
+Open question is how to retrieve the IPFS CID (content hash of the resolved SVG file).
+Could be provided in the NFT contract metadata (but that's a bit cumbersome to implement), or could be provided by some sort of decentralized key value store (mapping nft:// URIs to IPFS CIDs)
+
+What options do exist for decentralized key value stores?
