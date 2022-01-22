@@ -124,8 +124,8 @@ Probably a good idea to scope this part out of the inital version.
 
 ### Public gateways
 
-The NFTGP project maintains a public gateway at https://nftgp.todo.
-The hope is that with adoption of the standard there will be alternative public gateways provided by third-parties.
+The NFTGP project maintains a public http gateway at https://nftgp.todo.
+With adoption of the standard we hope to see alternative public gateways provided by third-parties.
 
 ### Private gateways
 
@@ -133,6 +133,8 @@ A gateway can also be maintained privately by app providers.
 
 ### Local gateways
 
-An NFT gateway implemented to run locally on the end-users machine must make sure that privacy is preserved.
-This can be achieved by routing all http requests through a generic proxy.
+An NFT gateway can also run locally on the end-user's machine, for example bundled within a web app or implemented as a browser extension.
+
+Any client local gateway must make sure that privacy is preserved.
+This can be achieved by routing http requests through a generic http proxy server.
 
