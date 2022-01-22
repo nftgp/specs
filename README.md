@@ -39,7 +39,7 @@ This facilitates on-chain generation and storage of complex images with small si
 The NFT Gateway Protocol defines a mechanism for the resolution and embedding of resources referenced in SVG to make a self-contained SVG that displays consistently in all environments.
 
 
-## NFT Address Schema
+## NFT URI scheme
 
 This specification introduces the `nft` URI scheme.
 The `nft:` URI prefix signals that the URI at hand must be resolved according to the NFT Gateway Protocol.
@@ -72,17 +72,26 @@ It shall usually be composed of the [URI component encoded](https://developer.mo
 
 #### Example
 
-The infamous Beeple NFT's is identified by the following nft scheme URI:
+The infamous Beeple NFT is identified by the following nft scheme URI:
 
 > nft://1/0x2a46f2ffd99e19a89476e2f62270e0a35bbf0756/40913/EVERYDAYS%3A%20THE%20FIRST%205000%20DAYS.jpg
 
 ## SVG URI resolution
 
+Special consideration is given to SVG as an NFT data format.
+SVG data must be processed by the gateway to resolve certain URI and embed the referenced resources.
+
+### URI locations that are subject to resolution
+
+#### `href` attributes
 Values of any SVG [href attribute](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/href) are subject to resolution by the gateway.
 
+#### css `url()` functions
 Additionally, the gateway must resolve the arguments of [css url() functions](https://developer.mozilla.org/en-US/docs/Web/CSS/url).
 
-### URI schemes for resolution
+URIs appearing anywhere else in the SVG document are not resolved but kept unmodified.
+
+### URI schemes that are subject to resolution
 
 #### http(s)
 
