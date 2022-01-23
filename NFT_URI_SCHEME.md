@@ -31,8 +31,40 @@ Sections in square brackets are optional and can be omitted.
 The optional `<FILENAME>` suffix does not serve any addressing purposes.
 It shall usually be composed of the [URI component encoded](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent) [EIP-721 name metadata](https://eips.ethereum.org/EIPS/eip-721) and the canonical file extension.
 
-## Example URI
+#### Example URI
 
 The infamous Beeple NFT is identified by the following nft scheme URI:
 
 > nft://1/0x2a46f2ffd99e19a89476e2f62270e0a35bbf0756/40913/EVERYDAYS%3A%20THE%20FIRST%205000%20DAYS.jpg
+
+## URI Resolution
+
+### Retrieve the token data URI
+
+- Query the addressed blockchain via an archive node
+- read dataUri of the token on the specified block
+
+### Respond on-chain data
+
+If the retrieved URI is of the `data` scheme and the data is in SVG format it is subject to [SVG resource inlining](./SVG_RESOURCE_INLINING.ms).
+If the data is in any other format it is written to the response body without modification.
+
+### Respond data from decentralized storage
+
+If the retrieved data URI is of the `ipfs` scheme, its must be resolved via [IPFS](https://ipfs.io).
+
+### Respond data from http servers
+
+If the retrieved data URI is of the `http` scheme, the content is fetched via http and written to the response body without modification.
+
+## Content Caching
+
+The content of NFT URIs can be cached according to the following rules:
+
+- If the `<BLOCK>` URI component is specified as a block number, caches can treat the content as [immutable](https://datatracker.ietf.org/doc/html/rfc8246).
+- If the `<BLOCK>` URI component has the value of `latest` and the retrieved content has some cache control information attached to it, e.g., via a cache-control http header, caches have to obey these rules.
+- If the `<BLOCK>` URI component has the value of `latest` and there is no cache control information available, caches must assign an expiration time lower or equal to the average block time of the token's host chain.
+- If no `<BLOCK>` URI component is specified and the retrieved content has some cache control information attached to it, these rules have to obeyed.
+- If no `<BLOCK>` URI component is specified and there is no cache control information available, caches may assign a heuristic expiration time to the content.
+
+_Note:_ The `<FILENAME>` URI component has no relevance for caching.
