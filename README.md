@@ -35,27 +35,27 @@ This is crucial for enabling trust minimized access to NFT data where URIs to NF
 ### Composability
 
 [SVG](https://www.w3.org/TR/SVG/) lends itself as a format for generating images on a blockchain due to its compact vector-based representation.
-Importantly, it can use external resources, like fonts, other SVG files, or raster images, via URI references.
-This facilitates on-chain generation and storage of complex images with small size, that are composed of larger image layers stored off-chain, e.g., on [IPFS](https://ipfs.io).
+Importantly, it can use external resources, like fonts, other SVG files, or raster images via URI references.
+This facilitates on-chain generation and storage of complex images at a small file size by composing larger image layers that are stored off-chain, e.g., on [IPFS](https://ipfs.io).
 
-The NFT Gateway Protocol defines a mechanism for the resolution and inlining of external resources in SVG guarantee consistent image rendering in any environment.
+The NFT Gateway Protocol defines a mechanism for the resolution and inlining of external resources in SVG--guaranteeing consistent image rendering in any environment.
 
 ## Gateway implementations
 
 ### Public gateways
 
-The NFTGP project maintains a free public http gateway service at https://nftgp.io.
+The NFTGP project maintains a free public http gateway service at https://nftgp.io. *(Coming soon)*
 
 The source code of http gateway reference implementations can be found here:
 
-- https://github.com/nftgp/nft-http-gateway
-- https://github.com/nftgp/svg-http-gateway
+- https://github.com/nftgp/nft-http-gateway *(Coming soon)*
+- https://github.com/nftgp/svg-http-gateway *(Coming soon)*
 
-With adoption of the standard we hope to both, alternative gateway implementations as well as third-party public gateways.
+With adoption of the standard we hope to see more instances of both, alternative gateway implementations as well as third-party public gateways.
 
 ### Private & local gateways
 
-The NFT Gateway Protocol can also be implemented as private gateways, for example as part of any web3 applications back-end infrastructure.
+The NFT Gateway Protocol can also be implemented by private gateways, for example as part of a web3 application's back-end infrastructure.
 
-Additionally, an NFT gateway can even run locally on the end-user's machine, for example bundled within a web app or implemented as a browser extension.
-Such client local gateway must make sure that privacy is preserved, which can be achieved by routing http requests to media files through a trusted http proxy server.
+Finally, an NFT gateway can even run locally on the end-user's machine, for example bundled within a web app or implemented as a browser extension.
+Such client-local gateway must take extra measures to ensure that privacy is preserved, which can be achieved by routing http requests to media files through a trusted http proxy server, for example.
