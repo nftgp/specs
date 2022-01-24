@@ -25,7 +25,7 @@ This can be alleviated by proxying such requests through a gateway.
 
 ### Interoperability
 
-Gateways implementing the NFT Gateway Protocol will be interoperable and can be used interchangeably by different wallets or other apps for displaying NFT media.
+Gateways implementing the NFT Gateway Protocol are interoperable and can be used interchangeably by different wallets or other apps for displaying NFT media.
 
 ### Trust Minimization
 
