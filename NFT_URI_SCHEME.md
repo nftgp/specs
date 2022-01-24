@@ -24,7 +24,7 @@ If omitted, the gateway can choose to query from any block on which the data URI
 
 To form an URI of the NFT scheme the attributes above are combined according to this structure:
 
-> nft://`<CHAIN_ID>`\[:`<BLOCK>`\]/`<CONTRACT_ADDRESS>`/`<TOKEN_ID>`\[/`<FILENAME>`\]
+> nft://`<CHAIN_ID>`\[.`<BLOCK>`\]/`<CONTRACT_ADDRESS>`/`<TOKEN_ID>`\[/`<FILENAME>`\]
 
 Sections in square brackets are optional and can be omitted.
 
