@@ -13,10 +13,10 @@ The protocol is designed to address a set of concerns about the way current web3
 
 ### Addressability
 
-While sharing the token URI is certainly possible, this URI allows no inference of the actual NFT on-chain record and the ownership claim it expresses.
+While sharing the token URI is certainly possible, this URI allows no inference of the NFT's on-chain record and the ownership claim it expresses.
 Moreover, for NFT data that is stored or generated on-chain there is no way for websites to link to it in a compact and reliable way since [data URIs](https://en.wikipedia.org/wiki/Data_URI_scheme) are long and not supported by many apps.
 
-The NFT Gateway Protocol defines an address schema enabling direct links to NFT data that are concise, work reliably, and allow tracing to the ownership claim on the blockchain.
+The NFT Gateway Protocol defines an address schema for canonic links to NFTs that are concise, work reliably, and allow tracing to the ownership claim on the blockchain.
 
 ### Privacy Protection
 
