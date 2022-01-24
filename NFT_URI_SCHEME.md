@@ -12,7 +12,7 @@ The specification considers NFTs on [EVM](https://ethereum.org/en/developers/doc
   <dd>The <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-155.md">chain ID</a> of EVM chain storing the NFT contract</dd>
   <dt><code>&lt;CONTRACT_ADDRESS&gt;</code> (hexadecimal)</dt>
   <dd>The Ethereum address of the NFT smart contract</dd>
-  <dt><code>&lt;TOKEN_ID&gt;</code> (adecimal)</dt>
+  <dt><code>&lt;TOKEN_ID&gt;</code> (decimal)</dt>
   <dd>The <a href="https://eips.ethereum.org/EIPS/eip-721">EIP-721 token ID</a></dd>
   <dt><code>&lt;BLOCK&gt;</code> (decimal or <code>latest</code>)</dt>
   <dd>The block number (height) or <code>latest</code> tag</dd>
@@ -24,9 +24,12 @@ If omitted, the gateway can choose to query from any block on which the data URI
 
 To form an URI of the NFT scheme the attributes above are combined according to this structure:
 
-> nft://`<CHAIN_ID>`\[.`<BLOCK>`\]/`<CONTRACT_ADDRESS>`/`<TOKEN_ID>`\[/`<FILENAME>`\]
+> nft://\[`<FROM>`@\]`<CHAIN_ID>`\[.`<BLOCK>`\]/`<CONTRACT_ADDRESS>`/`<TOKEN_ID>`\[/`<FILENAME>`\]
 
 Sections in square brackets are optional and can be omitted.
+
+The optional `<FROM>` component can be set to any EVM address.
+If a value is specified, when resolving the URI this address will used as the [`from` parameter](https://eth.wiki/json-rpc/API) in the JSON-RPC call for reading the token URI from the blockchain.
 
 The optional `<FILENAME>` suffix does not serve any addressing purposes.
 It shall usually be composed of the [URI component encoded](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent) [EIP-721 name metadata](https://eips.ethereum.org/EIPS/eip-721) and the canonical file extension.

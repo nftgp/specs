@@ -44,12 +44,10 @@ The NFT Gateway Protocol defines a mechanism for the resolution and inlining of 
 
 ### Public gateways
 
-The NFTGP project maintains a free public http gateway service at https://nftgp.io. *(Coming soon)*
+The NFTGP project maintains a free public http gateway service at https://nftgp.io.
 
-The source code of http gateway reference implementations can be found here:
-
-- https://github.com/nftgp/nft-http-gateway *(Coming soon)*
-- https://github.com/nftgp/svg-http-gateway *(Coming soon)*
+The source code of an http gateway reference implementation can be found here:
+https://github.com/nftgp/nft-http-gateway
 
 With adoption of the standard we hope to see more instances of both, alternative gateway implementations as well as third-party public gateways.
 
