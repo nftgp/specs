@@ -38,7 +38,7 @@ This is crucial for enabling trust minimized access to NFT data where URIs to NF
 Importantly, it can use external resources, like fonts, other SVG files, or raster images via URI references.
 This facilitates on-chain generation and storage of complex images at a small file size by composing larger image layers that are stored off-chain, e.g., on [IPFS](https://ipfs.io).
 
-The NFT Gateway Protocol defines a mechanism for the resolution and inlining of external resources in SVG--guaranteeing consistent image rendering in any environment.
+The NFT Gateway Protocol defines a mechanism for the resolution and inlining of external resources in SVG–guaranteeing consistent image rendering in any environment.
 
 ## Gateway implementations
 
