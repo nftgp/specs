@@ -41,7 +41,7 @@ URIs with the `nft` scheme (starting with `nft://`) are resolved according to th
 
 URIs of any other scheme are not resolved but kept unmodified.
 
-### Resolution and inlining process
+## Resolution and inlining process
 
 Any URI that is subject to resolution as per the previous sections must be replaced with a new [data scheme](https://en.wikipedia.org/wiki/Data_URI_scheme) URI.
 
